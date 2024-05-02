@@ -1,15 +1,18 @@
-const StudentRow = ({ productInfo, deleteProduct }) => {
+import { Link } from "react-router-dom"
+
+const ProductRow = ({ id, title, brand, price, rating, handleProductRemove }) => {
 
     return (
-        <div className="StudentRow">
-            <h1>{productInfo.title}</h1>
-            <p>Price: {productInfo.price}</p>
-            <p>Brand: {productInfo.brand}</p>
-            <p>{productInfo.price <= 600 ? 'GET ITTT🥳 ' : 'OHHH SORRY🖕'} </p>
-            <button className="btn-delete" onClick={() => deleteProduct(productInfo.id)}>DELETE</button>
-        </div>
+        <tr>
+            <td><Link to={`itemDetails/${id}`} >{title}</Link> </td>
+            <td>{brand}</td>
+            <td>{price}</td>
+            <td>
+                {rating > 4.5 ? '🟢' : '🔴'} {rating}
+            </td>
+            <td onClick={() => handleProductRemove(id)}>❌</td>
+        </tr>
     )
-
 }
 
-export default StudentRow
+export default ProductRow
