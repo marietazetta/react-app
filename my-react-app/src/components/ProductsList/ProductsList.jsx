@@ -1,25 +1,11 @@
-import { useState } from "react"
 import ProductRow from "../ProductRow/ProductRow"
-import productsData from './../../data/products.json'
-import { Link } from "react-router-dom"
-
 
 import './ProductsList.css'
 
-const ProductsList = () => {
-
-    const [products, setProducts] = useState(productsData)
-
-    const handleProductRemove = (productIdToDelete) => {
-        const productsAfterDeletion = products.filter(eachProduct => eachProduct.id != productIdToDelete)
-        setProducts(productsAfterDeletion)
-    }
+const ProductsList = ({ products, handleProductRemove }) => {
 
     return (
         <div className="ProductsList">
-            <h1>Productos</h1>
-            <Link to={'/'}><button>  Back </button></Link>
-            <hr />
 
             <table>
 
@@ -29,6 +15,7 @@ const ProductsList = () => {
                         <th>Marca</th>
                         <th>Precio</th>
                         <th>Puntuación</th>
+                        <th>Detalles</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>

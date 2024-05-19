@@ -1,36 +1,14 @@
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import { Route, Routes } from "react-router-dom"
-import About from "../About/About"
-import ProductsList from "../ProductsList/ProductsList"
-import ItemDetails from "../ItemDetails/ItemDetails"
-import NotFound from "../NotFound/NotFound"
-
-
+import { Link } from 'react-router-dom'
 import './HomePage.css'
 
 const HomePage = () => {
     return (
         <div className="HomePage">
-            <Navbar />
-            <main className="main-content">
-                <Sidebar />
-
-                < Routes >
-
-                    <Route path={'/Products'} element={<ProductsList />} />
-                    <Route path={'/About'} element={<About />} />
-                    <Route path={'/Products/ItemDetails/:itemId'} element={<ItemDetails />} />
-                    <Route path={'*'} element={<NotFound />} />
-
-
-                </Routes >
-
-            </main>
-        </div>
+            <h1>Bienvend@ a la weg</h1>
+            <hr />
+            <Link to={'/productos/listado'} >Ver productos</Link>
+        </div >
     )
 }
 
 export default HomePage
-
-

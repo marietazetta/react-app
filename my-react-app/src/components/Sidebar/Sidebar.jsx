@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom'
 import './Sidebar.css'
-import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     return (
@@ -7,13 +7,13 @@ const Sidebar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to={`/Products`}>Products</Link>
+                        <Link to={'/productos/listado'}>Productos</Link>
                     </li>
                     <li>
-                        <Link to={`/ItemDetails`}> Add Product</Link>
+                        <Link to={'/productos/crear'}>Nuevo producto</Link>
                     </li>
                     <li>
-                        <Link to={`/About`}> About</Link>
+                        <Link to={'/sobre-mi'}>Sobre mi</Link>
                     </li>
                 </ul>
             </nav>
